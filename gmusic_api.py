@@ -1,3 +1,7 @@
+if __name__ == "__main__":
+    import requests
+    import pprint
+
 from gmusicapi import Mobileclient
 from secrets import username, password
 
@@ -9,3 +13,7 @@ if not logged_in:
 def search(query):
     song_results = api.search_all_access('lil dicky')['song_hits']
     return song_results[0]
+
+if __name__ == "__main__":
+    pp = pprint.PrettyPrinter(indent=4)
+    pp.pprint(search("Lil Dicky"))
