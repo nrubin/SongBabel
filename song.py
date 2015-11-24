@@ -19,6 +19,9 @@ class Song(object):
 	def add_gmusic_id(self,an_id):
 		self.gmusic_id = an_id
 
+	def get_gmusic_url(self):
+		return 'https://play.google.com/music/m/' + self.gmusic_id
+
 	def add_gmusic_video_id(self,an_id):
 		self.gmusic_video_id = an_id
 
