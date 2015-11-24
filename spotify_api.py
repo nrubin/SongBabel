@@ -1,4 +1,5 @@
 import urllib
+import requests
 
 def search(query):
 	escaped_query = urllib.quote(query)
