@@ -16,6 +16,9 @@ class Song(object):
 	def add_itunes_url(self,url):
 		self.itunes_url = url
 
+	def add_youtube_id(self,an_id):
+		self.youtube_id = an_id
+	
 	def add_gmusic_id(self,an_id):
 		self.gmusic_id = an_id
 
