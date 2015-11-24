@@ -16,5 +16,11 @@ class Song(object):
 	def add_itunes_url(self,url):
 		self.itunes_url = url
 
+	def add_gmusic_id(self,an_id):
+		self.gmusic_id = an_id
+
+	def add_gmusic_video_id(self,an_id):
+		self.gmusic_video_id = an_id
+
 	def __repr__(self):
 		return self.name

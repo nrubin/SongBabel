@@ -5,18 +5,24 @@ from flask import Flask, Response, request, jsonify
 
 
 import spotify_api as spotify
+import gmusic_api as gmusic
 
 app = Flask(__name__, static_url_path='', static_folder='.')
 app.add_url_rule('/', 'root', lambda: app.send_static_file('index.html'))
 
 
 
-@app.route('/spotify_search', methods=['POST'])
+@app.route('/spotify_search', methods=['GET'])
 def spotify_search():
-	query = request.form['query']
-	print query
+	query = request.args.get('q')
 	result = spotify.search(query)
 	return jsonify({'result':result})
+
+@app.route('/gmusic_search', methods=['GET'])
+def gmusic_search():
+    query = request.args.get('q')
+    result = gmusic.search(query)
+    return jsonify({'result':result})
 
 if __name__ == '__main__':
     try:
