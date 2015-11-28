@@ -32,24 +32,24 @@ class Song(object):
 		return self.name
 
 	def serialize(self):
-		data = {
+		return {
 			'name' : self.name,
 			'artist' : self.artist,
 			'album' : self.artist,
 			'spotify_data' : {
-				'id':self.data.get('spotify_id',''),
-				'url':self.data.get('spotify_url','')
+				'id':self.__dict__.get('spotify_id',''),
+				'url':self.__dict__.get('spotify_url','')
 			},
 			'itunes_data' : {
-				'id':self.itunes_id,
-				'url':self.itunes_url
+				'id':self.__dict__.get('itunes_id',''),
+				'url':self.__dict__.get('itunes_url','')
 			},
 			'youtube_data' : {
-				'id':self.youtube_id
+				'id':self.__dict__.get('youtube_id','')
 			},
 			'gmusic_data' : {
-				'id':self.gmusic_id,
+				'id':self.__dict__.get('gmusic_id',''),
 				'url':self.get_gmusic_url(),
-				'video_id':self.gmusic_video_id
+				'video_id':self.__dict__.get('gmusic_video_id','')
 			}
 		}
