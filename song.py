@@ -37,7 +37,7 @@ class Song(object):
 			'artist' : self.artist,
 			'album' : self.artist,
 			'spotify_data' : {
-				'id':self..data.get('spotify_id',''),
+				'id':self.data.get('spotify_id',''),
 				'url':self.data.get('spotify_url','')
 			},
 			'itunes_data' : {
