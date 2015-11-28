@@ -30,3 +30,26 @@ class Song(object):
 
 	def __repr__(self):
 		return self.name
+
+	def serialize(self):
+		data = {
+			'name' : self.name,
+			'artist' : self.artist,
+			'album' : self.artist,
+			'spotify_data' : {
+				'id':self..data.get('spotify_id',''),
+				'url':self.data.get('spotify_url','')
+			},
+			'itunes_data' : {
+				'id':self.itunes_id,
+				'url':self.itunes_url
+			},
+			'youtube_data' : {
+				'id':self.youtube_id
+			},
+			'gmusic_data' : {
+				'id':self.gmusic_id,
+				'url':self.get_gmusic_url(),
+				'video_id':self.gmusic_video_id
+			}
+		}

@@ -2,6 +2,7 @@ import requests
 import json
 import os
 from flask import Flask, Response, request, jsonify
+from song import Song
 
 
 import spotify_api as spotify
@@ -16,13 +17,13 @@ app.add_url_rule('/', 'root', lambda: app.send_static_file('index.html'))
 def spotify_search():
 	query = request.args.get('q')
 	result = spotify.search(query)
-	return jsonify({'result':result})
+	return jsonify({'result':result.serilize()})
 
 @app.route('/gmusic_search', methods=['GET'])
 def gmusic_search():
     query = request.args.get('q')
     result = gmusic.search(query)
-    return jsonify({'result':result})
+    return jsonify({'result':result.serialize()})
 
 if __name__ == '__main__':
     try:
